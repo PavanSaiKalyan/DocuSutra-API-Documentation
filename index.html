@@ -1,0 +1,810 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-88be50f0.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-c73cedba.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-a9fde460.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;json&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo1-1d0f93fc.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">CURL</a>
+              <a href="#" data-language-name="ruby">PHP</a>
+              <a href="#" data-language-name="python">Node.js</a>
+              <a href="#" data-language-name="json">json</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#get-started" class="toc-h1 toc-link" data-title="Get Started">Get Started</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#introduction" class="toc-h2 toc-link" data-title="Introduction">Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#client-libraries-sdks" class="toc-h2 toc-link" data-title="Client Libraries (SDKs)">Client Libraries (SDKs)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-basic-auth" class="toc-h2 toc-link" data-title="HTTP Basic Auth">HTTP Basic Auth</a>
+                  </li>
+                  <li>
+                    <a href="#with-api-key" class="toc-h2 toc-link" data-title="With API Key">With API Key</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#parsers" class="toc-h1 toc-link" data-title="Parsers">Parsers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-document-parsers" class="toc-h2 toc-link" data-title="List Document Parsers">List Document Parsers</a>
+                  </li>
+                  <li>
+                    <a href="#list-parser-model-layouts" class="toc-h2 toc-link" data-title="List Parser Model Layouts">List Parser Model Layouts</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#documents" class="toc-h1 toc-link" data-title="Documents">Documents</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#import-documents" class="toc-h2 toc-link" data-title="Import Documents">Import Documents</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#parsed-data" class="toc-h1 toc-link" data-title="Parsed Data">Parsed Data</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-data-of-one-document" class="toc-h2 toc-link" data-title="Get Data of One Document">Get Data of One Document</a>
+                  </li>
+                  <li>
+                    <a href="#get-data-of-multiple-documents" class="toc-h2 toc-link" data-title="Get Data Of Multiple Documents">Get Data Of Multiple Documents</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href ='https://docparser.com/'>Discover Parser</a></li>
+            <li><a href ='https://app.docparser.com/account/login/?red='>Visit Docparser App</a></li>
+            <li><a href='https://docparser.com/legal/terms-of-service'>Terms of Service</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='get-started'>Get Started</h1><h2 id='introduction'>Introduction</h2>
+<p>Welcome to the API of Docparser! You can use this API to</p>
+
+<ul>
+<li>List Document Parsers created with Docparser</li>
+<li>Load documents to a Document Parser</li>
+<li>Obtain your parsed data</li>
+</ul>
+
+<p>The Docparser API is organized around REST principles. Our API has predictable, resource-oriented URLs, and uses clear response messages to indicate API errors.</p>
+
+<p>The code examples in the right sidebar are designed to show you how to call our API. All you need to do is to replace the secret_api_key in the sample with your <a href="https://app.docparser.com/account/login/?red=myaccount%2Fapi">private API token</a>.</p>
+
+<p>This documentation was last updated 2021-04-29.</p>
+<h2 id='client-libraries-sdks'>Client Libraries (SDKs)</h2>
+<p>Docparser comes with two official client libraries to make it easier for you to build an integration with Docparser.</p>
+
+<p>Both client libraries are open source and are published under the MIT license. Which means that you can use them in your projects without any restrictions. If you want to contribute to the development of our libraries, please don’t hesitate to create a pull-requests in our Github repositories.
+<aside>
+Please note that the Docparser API can be used with any programming language capable of making HTTPS calls - even if there is no ready-to-use client library available. In case you developed a library in another programming language than the ones listed below, we would be thrilled to list it here as open source.
+</aside></p>
+<h3 id='official-libraries'>Official Libraries</h3>
+<ul>
+<li>PHP Client Library</li>
+<li>Node.js Client Library</li>
+</ul>
+<h3 id='third-party-libraries-and-code-snippets'>Third Party Libraries And Code Snippets</h3>
+<ul>
+<li>Salesforce Apex Code Snippets</li>
+<li>Coldfusion Library</li>
+</ul>
+<h1 id='authentication'>Authentication</h1>
+<p>Every request to the Docparser API needs to be authenticated with a secret API key linked to your account. You can obtain and reset your secret API key in the API Settings of your Docparser Account. Your API key carries many privileges, so be sure to keep them secret!</p>
+
+<p>All API requests must be made over HTTPS. Calls made over plain HTTP will fail. <a href="https://app.docparser.com/account/login/?red=myaccount%2Fapi">API requests</a> without authentication will also fail.</p>
+
+<p>Authentication to the API can be performed in two ways:</p>
+
+<ul>
+<li>via HTTP Basic Auth (recommended)</li>
+<li>by directly providing your API key in your request</li>
+</ul>
+
+<p>You can test if the authentication works by pinging the following URL. Please make sure to include the correct authentication headers / parameters as described below.</p>
+
+<p><code>GET https://api.docparser.com/v1/ping</code></p>
+<h2 id='http-basic-auth'>HTTP Basic Auth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.docparser.com/v1/ping <span class="se">\</span>
+   <span class="nt">-u</span> &lt;secret_api_key&gt;:
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pong"</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This authentication method is the preferred way of authenticating your requests to Docparser. When using HTTP Basic Auth, use your secret API key as the “username” and leave the “password” blank.</p>
+<h2 id='with-api-key'>With API Key</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.docparser.com/v1/ping <span class="nt">-H</span> <span class="s1">'api_key: &lt;secret_api_key&gt;'</span>
+
+curl https://api.docparser.com/v1/ping?api_key<span class="o">=</span>&lt;secret_api_key&gt;
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span><span class="p">(</span><span class="s1">'./vendor/autoload.php'</span><span class="p">);</span>
+<span class="n">use</span> <span class="no">Docparser</span><span class="p">\</span><span class="no">Docparser</span><span class="p">;</span>
+<span class="vg">$docparser</span> <span class="o">=</span> <span class="n">new</span> <span class="no">Docparser</span><span class="p">(</span><span class="s2">"secret_api_key"</span><span class="p">);</span>
+<span class="n">echo</span> <span class="vg">$docparser</span><span class="o">-&gt;</span><span class="n">ping</span><span class="p">();</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">var</span> <span class="n">docparser</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">'docparser-node'</span><span class="p">);</span>
+
+<span class="n">var</span> <span class="n">client</span> <span class="o">=</span> <span class="n">new</span> <span class="n">docparser</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span><span class="s">"secret_api_key"</span><span class="p">);</span>
+
+<span class="n">client</span><span class="p">.</span><span class="n">ping</span><span class="p">()</span>
+  <span class="p">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'authentication succeeded!'</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="n">catch</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'authentication failed!'</span><span class="p">)</span>
+  <span class="p">});</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pong"</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>In case Basic Auth is not an option for you, it is also possible to include your secret API key directly within your request. You can provide your API key either as a header (api_key: ABC123), a post-field (api_key=ABC123) or an URL query parameter (&amp;api_key=ABC123).</p>
+
+<p>Please note that including your API as an URL query parameter is the least secure method and we don’t recommend doing this. Including API keys in URLs comes with a high risk of accidentally exposing them to others.</p>
+<h1 id='parsers'>Parsers</h1><h2 id='list-document-parsers'>List Document Parsers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.docparser.com/v1/parsers <span class="se">\</span>
+   <span class="nt">-u</span> &lt;secret_api_key&gt;:
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code>     <span class="vg">$docparser</span><span class="o">-&gt;</span><span class="n">getParsers</span><span class="p">();</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code> <span class="n">client</span><span class="p">.</span><span class="n">getParsers</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">parsers</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">parsers</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="n">catch</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"mwekrupomwekrupo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"label"</span><span class="p">:</span><span class="s2">"Acme Inc. Invoice Parser"</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"cadqtvgjcadqtvgj"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"label"</span><span class="p">:</span><span class="s2">"Acme Corp. Invoice Parser"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns a list of all Document Parsers linked to your account. Each entry contains an id and a label. The id value an be used in other API routes, e.g. for importing documents to a specific Document Parser or obtaining parsing results.</p>
+
+<p><code>GET https://api.docparser.com/v1/parsers</code></p>
+<h2 id='list-parser-model-layouts'>List Parser Model Layouts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.docparser.com/v1/parser/models/&lt;PARSER_ID&gt; <span class="se">\</span>
+   <span class="nt">-u</span> &lt;secret_api_key&gt;:
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"label"</span><span class="p">:</span><span class="s2">"Acme Inc. Invoice Parser Layout #1"</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"label"</span><span class="p">:</span><span class="s2">"Acme Inc. Invoice Parser Layout #2"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns a list of all the Model Layouts for a specific parser linked to your account.</p>
+
+<p><code>GET https://api.docparser.com/v1/parser/models/&lt;PARSER_ID&gt;</code></p>
+<h1 id='documents'>Documents</h1><h2 id='import-documents'>Import Documents</h2>
+<p>We offer several options to import a document to Docparser to make it as easy as possible for you to integrate Docparser in your existing workflow.</p>
+
+<p>Next to manually uploading your documents with our app, Docparser also allows you to import documents using this API. You can upload your document with a HTTP POST request, or by providing a publicly accessible URL which can be used to fetch the document.</p>
+
+<p>Hint: Another easy way of importing your documents is to forward them by e-mail to a private email inbox linked to your account. You can learn more about this method in the settings of your Document Parser.</p>
+<h3 id='upload-document-from-local-path'>Upload Document From Local Path</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="se">\</span>
+  <span class="nt">-u</span> &lt;secret_api_key&gt;: <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"file=@/home/your/local/file.jpdf"</span> <span class="se">\</span>
+  https://api.docparser.com/v1/document/upload/&lt;PARSER_ID&gt;
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="vg">$docparser</span><span class="o">-&gt;</span><span class="n">uploadDocumentByPath</span><span class="p">(</span><span class="vg">$parserId</span><span class="p">,</span> <span class="vg">$filePath</span><span class="p">,</span> <span class="vg">$remoteId</span> <span class="o">=</span> <span class="n">null</span><span class="p">);</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">client</span><span class="p">.</span><span class="n">uploadFileByPath</span><span class="p">(</span><span class="s">'PARSER_ID'</span><span class="p">,</span> <span class="s">'./test.pdf'</span><span class="p">,</span> <span class="p">{</span><span class="n">remote_id</span><span class="p">:</span> <span class="s">'test'</span><span class="p">})</span>
+  <span class="p">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="n">catch</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+  <span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123efg456"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">119540</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quota_used"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">642</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quota_left"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">258</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quota_refill"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-02T02:43:48+00:00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Docparser allows you to upload documents from your local hard-drive with a multipart/form-data request. This is the same type of request a HTML form with a file upload field would send. The field name used for the document upload needs to be <code>file</code>.</p>
+
+<p>The return value of a successful upload is the ID of the newly created document, the filesize of the imported document as well as account usage data.</p>
+
+<p>Each of your Document Parsers has a unique API route to which you need to send your request. The <code>&lt;PARSER_ID&gt;</code> shown in the URL below can be obtained by calling the <code>List Parsers</code> API route. You can also easily obtain the <code>&lt;PARSER_ID&gt;</code> inside the Docparser app in the settings of your Document Parser under <code>Settings &gt; API.</code></p>
+
+<p>In addition, you can submit an arbitrary string to Docparser which will be stored together with the uploaded document. The submitted value (<code>remote_id</code>) will be kept throughout the processing and will be available later once you obtain the parsed data with our API, as CSV/XLS/XML file or through webhooks. This optional parameter makes it easy to relate the parsed data returned by Docparser with document records in your own system.</p>
+
+<p><code>POST https://api.docparser.com/v1/document/upload/&lt;PARSER_ID&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>The file object to upload</td>
+</tr>
+<tr>
+<td>remote_id</td>
+<td>Optional parrameter to pass through your own document ID.</td>
+</tr>
+</tbody></table>
+<h3 id='upload-document-by-content'>Upload Document By Content</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="se">\</span>
+  <span class="nt">-u</span> &lt;secret_api_key&gt;: <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"file=@/home/your/local/file.jpdf"</span> <span class="se">\</span>
+  https://api.docparser.com/v1/document/upload/&lt;PARSER_ID&gt;
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="vg">$docparser</span><span class="o">-&gt;</span><span class="n">uploadDocumentByPath</span><span class="p">(</span><span class="vg">$parserId</span><span class="p">,</span> <span class="vg">$filePath</span><span class="p">,</span> <span class="vg">$remoteId</span> <span class="o">=</span> <span class="n">null</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">client</span><span class="p">.</span><span class="n">uploadFileByPath</span><span class="p">(</span><span class="s">'PARSER_ID'</span><span class="p">,</span> <span class="s">'./test.pdf'</span><span class="p">,</span> <span class="p">{</span><span class="n">remote_id</span><span class="p">:</span> <span class="s">'test'</span><span class="p">})</span>
+  <span class="p">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="n">catch</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+  <span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123efg456"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">119540</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quota_used"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">642</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quota_left"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">258</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quota_refill"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-02T02:43:48+00:00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Alternatively to uploading a document from your hard drive, you can also send files in using a simple form-data HTTP POST request. To make this work, name your form field <code>file_content</code> and use base64 encoding for safe delivery of the data. The document name can be transferred in a second form field called <code>file_name.</code></p>
+
+<p>The return value of a successful upload is the ID of the newly created document, the filesize of the imported document as well as account usage data.</p>
+
+<p>Each of your Document Parsers has a unique API route to which you need to send your request. The <code>&lt;PARSER_ID&gt;</code> shown in the URL below can be obtained by calling the <code>List Parsers</code> API route. You can also easily obtain the <code>&lt;PARSER_ID&gt;</code> inside the Docparser app in the settings of your Document Parser under <code>Settings &gt; API.</code></p>
+
+<p>In addition, you can submit an arbitrary string to Docparser which will be stored together with the uploaded document. The submitted value (<code>remote_id</code>) will be kept throughout the processing and will be available later once you obtain the parsed data with our API, as CSV/XLS/XML file or through webhooks. This optional parameter makes it easy to relate the parsed data returned by Docparser with document records in your own system.</p>
+
+<p><code>POST https://api.docparser.com/v1/document/upload/&lt;PARSER_ID&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file_content</td>
+<td>The file content encoded with base64.</td>
+</tr>
+<tr>
+<td>file_name</td>
+<td>The file name for this document. This parameter is optional and we will attribute a file-name based on the time of uploading if empty.</td>
+</tr>
+<tr>
+<td>remote_id</td>
+<td>Optional parameter to pass through your own document ID.</td>
+</tr>
+</tbody></table>
+<h3 id='fetch-document-from-url'>Fetch Document From URL</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="se">\</span>
+  <span class="nt">-u</span> &lt;secret_api_key&gt;: <span class="se">\</span>
+  <span class="nt">-F</span> <span class="s2">"file_content=....&amp;file_name=...."</span> <span class="se">\</span>
+  https://api.docparser.com/v1/document/upload/&lt;PARSER_ID&gt;
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="vg">$docparser</span><span class="o">-&gt;</span><span class="n">uploadDocumentByPath</span><span class="p">(</span><span class="vg">$parserId</span><span class="p">,</span> <span class="vg">$filePath</span><span class="p">,</span> <span class="vg">$remoteId</span> <span class="o">=</span> <span class="n">null</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">client</span><span class="p">.</span><span class="n">uploadFileByPath</span><span class="p">(</span><span class="s">'PARSER_ID'</span><span class="p">,</span> <span class="s">'./test.pdf'</span><span class="p">,</span> <span class="p">{</span><span class="n">remote_id</span><span class="p">:</span> <span class="s">'test'</span><span class="p">})</span>
+  <span class="p">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="n">catch</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+  <span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123efg456"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file_size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">119540</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quota_used"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">642</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quota_left"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">258</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quota_refill"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-02T02:43:48+00:00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>If your files are stored under a publicly accessible URL, you can also import a document by providing the URL to our API. This method is really straight forward and you just need to perform a simple POST or GET request with <code>url</code> as the parameter.</p>
+
+<p>The return value of a successful fetch request is the ID of the newly created document, as well as account usage data.</p>
+
+<p>Each of your Document Parsers has a unique API route to which you need to send your request. The <code>&lt;PARSER_ID&gt;</code> shown in the URL below can be obtained by calling the <code>List Parsers</code> API route. You can also easily obtain the <code>&lt;PARSER_ID&gt;</code> inside the Docparser app in the settings of your Document Parser under <code>Settings &gt; API.</code></p>
+
+<p>In addition, you can submit an arbitrary string to Docparser which will be stored together with the fetched document. The submitted value (<code>remote_id</code>) will be kept throughout the processing and will be available later once you obtain the parsed data with our API, as CSV/XLS/XML file or through webhooks. This optional parameter makes it easy to relate the parsed data returned by Docparser with document records in your own system.</p>
+
+<p><code>POST https://api.docparser.com/v1/document/fetch/&lt;PARSER_ID&gt;</code></p>
+
+<p><code>GET https://api.docparser.com/v1/document/fetch/&lt;PARSER_ID&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>url</td>
+<td>The location of a publicly accessible document</td>
+</tr>
+<tr>
+<td>remote_id</td>
+<td>Optional parameter to pass through your own document ID</td>
+</tr>
+</tbody></table>
+<h1 id='parsed-data'>Parsed Data</h1>
+<p>Docparser provides a couple of different ways to obtain the data parsed from your documents. Basically, you have the following three options:</p>
+
+<ul>
+<li>Create permanent <a href="https://support.docparser.com/article/1250-what-are-the-options-for-downloading-parsed-data">download links</a></li>
+<li>Send parsed data to your API with <a href="https://support.docparser.com/article/1252-what-are-webhooks-and-cloud-integrations">webhooks</a></li>
+<li>Fetch parsed data with this API</li>
+</ul>
+<h2 id='get-data-of-one-document'>Get Data of One Document</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="se">\</span>
+  <span class="nt">-u</span> &lt;secret_api_key&gt;: <span class="se">\</span>
+  https://api.docparser.com/v1/results/&lt;PARSER_ID&gt;/&lt;DOCUMENT_ID&gt;
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="vg">$docparser</span><span class="o">-&gt;</span><span class="n">getResultsByDocument</span><span class="p">(</span><span class="vg">$parserId</span><span class="p">,</span> <span class="vg">$documentId</span><span class="p">,</span> <span class="vg">$format</span> <span class="o">=</span> <span class="s1">'object'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">client</span><span class="p">.</span><span class="n">getResultsByDocument</span><span class="p">(</span><span class="n">parserId</span><span class="p">,</span> <span class="n">documentId</span><span class="p">,</span> <span class="p">{</span><span class="nb">format</span><span class="p">:</span> <span class="s">'object'</span><span class="p">})</span>
+  <span class="p">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="n">catch</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+  <span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"967bcf5658d73c80563072373d5002e3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d35639d4b53b59e77f737c93cd1d3d7"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your_optional_id"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pdf.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"media_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.docparser.com/v1/document/media/..."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"media_link_original"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.docparser.com/v1/document/media/.../original"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"media_link_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.docparser.com/v1/document/media/.../data"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"page_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uploaded_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-27T14:57:05+00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"processed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-27T14:57:10+00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"purchase_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"last_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"first_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"table_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"...."</span><span class="p">:</span><span class="w"> </span><span class="s2">"...."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This API route returns the parsed data of one document. The response structure is identical to the <code>list</code> route above, only that the contains a single object representing the data of the requested document.
+<aside class="notice">
+ A much better way than polling our API for parsed data is to use our <code>Webhook</code> integration. By using webhooks, parsed data will be pushed to your API immediately after parsing. You’ll find the webhook integration in your Document Parser under ‘Integrations &gt; Advanced Webhook’.
+</aside></p>
+
+<p>The <code>&lt;PARSER_ID&gt;</code> shown in the URL below can be obtained by calling the List Parsers API route. You can also easily obtain the <code>&lt;PARSER_ID&gt;</code> inside the Docparser app in the settings of your Document Parser under <code>Settings &gt; API</code>.</p>
+
+<p>The <code>&lt;DOCUMENT_ID&gt;</code> is returned when uploading/importing a new document.</p>
+
+<p><code>GET https://api.docparser.com/v1/results/</code><PARSER_ID>/<DOCUMENT_ID>``</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>object</td>
+<td>Valid values are <code>object</code> or <code>flat</code>. By default, parsed document data is returned as nested JSON objects. Setting this parameter to flat will return a simplified version of the parsed data which does not contain flat key/value pairs instead of nested objects.</td>
+</tr>
+<tr>
+<td>include_chilren</td>
+<td></td>
+<td>If child documents were created during preprocessing (e.g. when splitting documents), setting this parameter to <code>true</code> ensures that the parsed data of all child documents is returned.</td>
+</tr>
+</tbody></table>
+<h2 id='get-data-of-multiple-documents'>Get Data Of Multiple Documents</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="se">\</span>
+  <span class="nt">-u</span> &lt;secret_api_key&gt;: <span class="se">\</span>
+  https://api.docparser.com/v1/results/&lt;PARSER_ID&gt;
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="vg">$docparser</span><span class="o">-&gt;</span><span class="n">getResultsByParser</span><span class="p">(</span><span class="vg">$parserId</span><span class="p">,</span> <span class="vg">$options</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">client</span><span class="p">.</span><span class="n">getResultsByParser</span><span class="p">(</span><span class="n">parserId</span><span class="p">,</span> <span class="p">{</span><span class="nb">format</span><span class="p">:</span> <span class="s">'object'</span><span class="p">})</span>
+  <span class="p">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="n">catch</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+  <span class="p">})</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"967bcf5658d73c80563072373d5002e3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d35639d4b53b59e77f737c93cd1d3d7"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"remote_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your_optional_id"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pdf.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"media_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.docparser.com/v1/document/media/..."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"media_link_original"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.docparser.com/v1/document/media/.../original"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"media_link_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.docparser.com/v1/document/media/.../data"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"page_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uploaded_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-27T14:57:05+00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"processed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-27T14:57:10+00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"purchase_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"last_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"first_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"table_data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"...."</span><span class="p">:</span><span class="w"> </span><span class="s2">"...."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+       </span><span class="err">....</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This API route returns a list of JSON objects representing the parsed data. By default, the data of the last 100 documents in reverse chronological order. Additional parameters can be used to change this default behaviour.</p>
+
+<aside class="notice">
+ A much better way than polling our API for parsed data is to use our `Webhook` integration. By using webhooks, parsed data will be pushed to your API immediately after parsing. You’ll find the webhook integration in your Document Parser under 'Integrations > Advanced Webhook’.
+ </aside>
+
+<p>The <code>&lt;PARSER_ID&gt;</code> shown in the URL below can be obtained by calling the List Parsers API route. You can also easily obtain the <code>&lt;PARSER_ID&gt;</code> inside the Docparser app in the settings of your Document Parser under <code>Settings &gt; API.</code></p>
+
+<p><code>GET https://api.docparser.com/v1/results/&lt;PARSER_ID&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>object</td>
+<td>Valid values are <code>object</code> or <code>flat</code>. By default, parsed document data is returned as nested JSON objects. Setting this parameter to flat will return a simplified version of the parsed data which contains <code>flat</code> key/value pairs instead of nested objects.</td>
+</tr>
+<tr>
+<td>list</td>
+<td>last_uploaded</td>
+<td>Valid values are <code>last_uploaded</code>, <code>uploaded_after</code> and <code>processed_after</code>. By default, the data of the last uploaded documents in reverse chronological order is returned. If set to <code>uploaded_after</code>, documents imported after a certain date are returned (see below). If set to <code>processed_after</code>, documents parsed after a certain date are returned (see below).</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>100</td>
+<td>This parameter indicates how many documents to include when the parameter <code>list</code> is set to <code>last_uploaded</code>. The maximum quantity of documents which can be returned is limited 10,000.</td>
+</tr>
+<tr>
+<td>date</td>
+<td></td>
+<td>This parameter is mandatory if the parameter list is set to <code>uploaded_after</code> or <code>processed_after</code>. The parameter needs to be a valid ISO 8601 (e.g. 2017-02-12T15:19:21+00:00) date string or a Linux timestamp and determines which documents are included in the return. Please note that the maximum quantity of documents which can be returned is limited 10,000.</td>
+</tr>
+<tr>
+<td>remote_id</td>
+<td></td>
+<td>When this parameter is set, only documents having the provided <code>remote_id</code> will be returned. The <code>remote_id</code> of a document can be set when importing the file via the API <a href="https://dev.docparser.com/#import-documents">(see above)</a>.</td>
+</tr>
+<tr>
+<td>include_processing_queue</td>
+<td></td>
+<td>By default, only documents which are fully processed (imported, preprocessed, parsed) are included in the results. By setting <code>include_processing_queue</code> to <code>true</code>, files which are not yet entirely processed are included in the results.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">CURL</a>
+                <a href="#" data-language-name="ruby">PHP</a>
+                <a href="#" data-language-name="python">Node.js</a>
+                <a href="#" data-language-name="json">json</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
