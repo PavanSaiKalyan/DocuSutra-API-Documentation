@@ -77,6 +77,9 @@ html, body {
     max-width: 100%;
     margin-bottom: $logo-margin;
   }
+  .logo-wrapper {
+    margin: 25px 10px;
+  }
 
   &>.search {
     position: relative;
